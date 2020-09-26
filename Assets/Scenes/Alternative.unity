@@ -14,8 +14,8 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
-  m_FogColor: {r: 0.263504, g: 0.28480524, b: 0.383, a: 1}
+  m_Fog: 0
+  m_FogColor: {r: 0.68235296, g: 0.5176471, b: 0.627451, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.02
   m_LinearFogStart: 0
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: a2cac1b9524c77d49b5cd0ab5887d2fc, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 42d6c94f6fd4665439ab61a234ddaaca, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -379,7 +379,6 @@ GameObject:
   m_Component:
   - component: {fileID: 420797743}
   - component: {fileID: 420797744}
-  - component: {fileID: 420797745}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -423,27 +422,6 @@ MonoBehaviour:
   CollisionLayerMask:
     serializedVersion: 2
     m_Bits: 512
---- !u!114 &420797745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 420797742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2869ea844a679f4ab6dc96175484bbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DayFogColor: {r: 0.5414559, g: 0.7285371, b: 0.78699994, a: 1}
-  DaySkyBoxColorTop: {r: 0, g: 0, b: 0, a: 0}
-  DaySkyBoxColorMid: {r: 0, g: 0, b: 0, a: 0}
-  DaySkyBoxColorBottom: {r: 0, g: 0, b: 0, a: 0}
-  NightFogColor: {r: 0.263504, g: 0.28480524, b: 0.383, a: 1}
-  NightSkyBoxColorTop: {r: 0, g: 0, b: 0, a: 0}
-  NightSkyBoxColorMid: {r: 0, g: 0, b: 0, a: 0}
-  NightSkyBoxColorBottom: {r: 0, g: 0, b: 0, a: 0}
-  CycleDuration: 120
 --- !u!1 &525193268
 GameObject:
   m_ObjectHideFlags: 0

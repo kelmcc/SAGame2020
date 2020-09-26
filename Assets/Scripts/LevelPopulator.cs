@@ -28,7 +28,10 @@ public class LevelPopulator : MonoBehaviour
 				float totalProbability = 0;
 				foreach (LevelPopulatorSettings.EnvironmentObjectData data in Settings.Objects)
 				{
-					totalProbability += data.VisibilityProbability.Evaluate(Mathf.Abs(x) / Settings.Width);
+					if (data.MinDistance <= z && data.MaxDistance >= z)
+					{
+						totalProbability += data.VisibilityProbability.Evaluate(Mathf.Abs(x) / Settings.Width);
+					}
 				}
 
 				float randomNumber = Random.Range(0f, 1f);

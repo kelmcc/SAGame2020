@@ -97,7 +97,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     MinDistance: 0
-    MaxDistance: 155
+    MaxDistance: 70
     CheckSurroundingsRadius: 1
   - Prefab: {fileID: 3360377161252291209, guid: 476a1c8a649ddd840aa059623ef7076f,
       type: 3}
@@ -126,7 +126,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     MinDistance: 0
-    MaxDistance: 155
+    MaxDistance: 70
     CheckSurroundingsRadius: 1
   - Prefab: {fileID: 3360377161252291209, guid: 35423a0261b41b94793a86a250953807,
       type: 3}
@@ -136,20 +136,20 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: 0.24476744
+        outSlope: 0.24476744
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0
+        outWeight: 0.17102137
       - serializedVersion: 3
         time: 1
-        value: 1
-        inSlope: 1.3867925
-        outSlope: 1.3867925
+        value: 0.16744049
+        inSlope: 0.72140443
+        outSlope: 0.72140443
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.08333331
+        inWeight: 0.09026128
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -183,8 +183,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MinDistance: 0
-    MaxDistance: 155
+    MinDistance: 90
+    MaxDistance: 135
     CheckSurroundingsRadius: 1
   - Prefab: {fileID: 3360377161252291209, guid: cf445cd869b125c4abcd4a92b5960212,
       type: 3}
@@ -212,8 +212,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MinDistance: 0
-    MaxDistance: 155
+    MinDistance: 90
+    MaxDistance: 135
     CheckSurroundingsRadius: 3
   - Prefab: {fileID: 3360377161252291209, guid: 7a184f64905f49b4794d30057e810b87,
       type: 3}
@@ -269,12 +269,12 @@ MonoBehaviour:
         outWeight: 1
       - serializedVersion: 3
         time: 1
-        value: 1
-        inSlope: 5.660382
-        outSlope: 5.660382
+        value: 0.09691954
+        inSlope: 1.3509728
+        outSlope: 1.3509728
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.020833313
+        inWeight: 0.1333332
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -282,7 +282,159 @@ MonoBehaviour:
     MinDistance: 50
     MaxDistance: 100
     CheckSurroundingsRadius: 5
+  - Prefab: {fileID: 3360377161252291209, guid: 7e434ffa0e60a9e4ea3f08834ee307c2,
+      type: 3}
+    VisibilityProbability:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: -0
+        outSlope: -0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.275
+      - serializedVersion: 3
+        time: 0.90834045
+        value: -0.00006331032
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.26153845
+        outWeight: 1
+      - serializedVersion: 3
+        time: 1
+        value: 0.04904127
+        inSlope: 0.6747564
+        outSlope: 0.6747564
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.14493312
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    MinDistance: 50
+    MaxDistance: 100
+    CheckSurroundingsRadius: 5
+  - Prefab: {fileID: 3360377161252291209, guid: 1b1d7517833f8064ba4b9d217a437c89,
+      type: 3}
+    VisibilityProbability:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: -0
+        outSlope: -0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.275
+      - serializedVersion: 3
+        time: 0.9202169
+        value: -0.00006331032
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.26153845
+        outWeight: 1
+      - serializedVersion: 3
+        time: 1
+        value: 0.03159941
+        inSlope: 0.8089546
+        outSlope: 0.8089546
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.17863145
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    MinDistance: 30
+    MaxDistance: 60
+    CheckSurroundingsRadius: 5
+  - Prefab: {fileID: 3360377161252291209, guid: f39d1ef783f74914fa7c21dfd1dc5654,
+      type: 3}
+    VisibilityProbability:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: -0
+        outSlope: -0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.275
+      - serializedVersion: 3
+        time: 0.9202169
+        value: -0.00006331032
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.26153845
+        outWeight: 1
+      - serializedVersion: 3
+        time: 1
+        value: 0.03159941
+        inSlope: 0.8089546
+        outSlope: 0.8089546
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.17863145
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    MinDistance: 100
+    MaxDistance: 155
+    CheckSurroundingsRadius: 5
+  - Prefab: {fileID: 3360377161252291209, guid: 44ecde373c9afe847a10ac259452f342,
+      type: 3}
+    VisibilityProbability:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: -0
+        outSlope: -0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.275
+      - serializedVersion: 3
+        time: 0.9202169
+        value: -0.00006331032
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.26153845
+        outWeight: 1
+      - serializedVersion: 3
+        time: 1
+        value: 0.03159941
+        inSlope: 0.8089546
+        outSlope: 0.8089546
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.17863145
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    MinDistance: 30
+    MaxDistance: 110
+    CheckSurroundingsRadius: 5
   NegativeStartingPoint: -5
-  Width: 10
+  Width: 15
   Distance: 155
   Step: 0.5
