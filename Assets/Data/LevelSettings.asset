@@ -38,6 +38,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    MinDistance: 0
+    MaxDistance: 155
     CheckSurroundingsRadius: 1
   - Prefab: {fileID: 3360377161252291209, guid: e063bf8c73b75a247a77e42c627e1898,
       type: 3}
@@ -65,6 +67,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    MinDistance: 0
+    MaxDistance: 155
     CheckSurroundingsRadius: 1
   - Prefab: {fileID: 3360377161252291209, guid: 3cf9d62bc6dc494479122136ea87d48c,
       type: 3}
@@ -92,6 +96,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    MinDistance: 0
+    MaxDistance: 155
     CheckSurroundingsRadius: 1
   - Prefab: {fileID: 3360377161252291209, guid: 476a1c8a649ddd840aa059623ef7076f,
       type: 3}
@@ -119,6 +125,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    MinDistance: 0
+    MaxDistance: 155
     CheckSurroundingsRadius: 1
   - Prefab: {fileID: 3360377161252291209, guid: 35423a0261b41b94793a86a250953807,
       type: 3}
@@ -146,6 +154,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    MinDistance: 0
+    MaxDistance: 155
     CheckSurroundingsRadius: 1
   - Prefab: {fileID: 3360377161252291209, guid: 3808e6a031f234c4b8efa699906dc4a0,
       type: 3}
@@ -173,6 +183,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    MinDistance: 0
+    MaxDistance: 155
     CheckSurroundingsRadius: 1
   - Prefab: {fileID: 3360377161252291209, guid: cf445cd869b125c4abcd4a92b5960212,
       type: 3}
@@ -200,6 +212,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    MinDistance: 0
+    MaxDistance: 155
     CheckSurroundingsRadius: 3
   - Prefab: {fileID: 3360377161252291209, guid: 7a184f64905f49b4794d30057e810b87,
       type: 3}
@@ -227,6 +241,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    MinDistance: 0
+    MaxDistance: 155
     CheckSurroundingsRadius: 1
   - Prefab: {fileID: 3360377161252291209, guid: 4cffc8f8200deb642b1719400fe7c1b1,
       type: 3}
@@ -263,6 +279,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    MinDistance: 50
+    MaxDistance: 100
     CheckSurroundingsRadius: 5
   NegativeStartingPoint: -5
   Width: 10
