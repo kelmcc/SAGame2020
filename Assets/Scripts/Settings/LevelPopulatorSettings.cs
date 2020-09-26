@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "LevelAssets")]
+[CreateAssetMenu(fileName = "LevelPopulatorSettings")]
 public class LevelPopulatorSettings : ScriptableObject
 {
    public List<EnvironmentObjectData> Objects;

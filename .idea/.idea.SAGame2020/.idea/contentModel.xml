@@ -11,8 +11,11 @@
           <e p="AIBrain.cs" t="Include" />
           <e p="Brain.cs" t="Include" />
           <e p="LevelPopulator.cs" t="Include" />
-          <e p="LevelPopulatorSettings.cs" t="Include" />
           <e p="PlayerBrain.cs" t="Include" />
+          <e p="Settings" t="Include">
+            <e p="LevelPopulatorSettings.cs" t="Include" />
+            <e p="ResourceSettings.cs" t="Include" />
+          </e>
           <e p="SimpleCameraController.cs" t="Include" />
         </e>
         <e p="TutorialInfo" t="Include">
