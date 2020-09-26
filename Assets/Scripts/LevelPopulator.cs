@@ -12,52 +12,58 @@ public class LevelPopulator : MonoBehaviour
 
 	public LayerMask CollisionLayerMask;
 
-    void Start()
-    {
-	    if (Seed != -1)
-	    {
-		    Random.InitState(Seed);
-	    }
-	    for(float z = 0; z < Settings.Distance; z += Settings.Step)
-	    {
-		    for (float x = -Settings.Width; x < Settings.Width; x+=Settings.Step)
-		    {
-			    Vector2 randomOffset = Random.insideUnitCircle * 0.75f;
-			    Vector3 position = new Vector3(x + Settings.Step / 2f + randomOffset.x, 0, z + Settings.NegativeStartingPoint + randomOffset.y);
+	void Start()
+	{
+		if (Seed != -1)
+		{
+			Random.InitState(Seed);
+		}
+		for (float z = 0; z < Settings.Distance; z += Settings.Step)
+		{
+			for (float x = -Settings.Width; x < Settings.Width; x += Settings.Step)
+			{
+				Vector2 randomOffset = Random.insideUnitCircle * 0.75f;
+				Vector3 position = new Vector3(x + Settings.Step / 2f + randomOffset.x, 0, z + Settings.NegativeStartingPoint + randomOffset.y);
 
-			    float totalProbability = 0;
-			    foreach (LevelPopulatorSettings.EnvironmentObjectData data in Settings.Objects)
-			    {
-				    totalProbability += data.VisibilityProbability.Evaluate(Mathf.Abs(x) / Settings.Width);
-			    }
+				float totalProbability = 0;
+				foreach (LevelPopulatorSettings.EnvironmentObjectData data in Settings.Objects)
+				{
+					if (data.MinDistance <= z && data.MaxDistance >= z)
+					{
+						totalProbability += data.VisibilityProbability.Evaluate(Mathf.Abs(x) / Settings.Width);
+					}
+				}
 
-			    float randomNumber = Random.Range(0f, 1f);
-			    float cumulativeNormalizedProbability = 0;
-			    foreach (LevelPopulatorSettings.EnvironmentObjectData data in Settings.Objects)
-			    {
-				    float normalizedProbability = data.VisibilityProbability.Evaluate(Mathf.Abs(x) / Settings.Width) / totalProbability;
-				    cumulativeNormalizedProbability += normalizedProbability;
+				float randomNumber = Random.Range(0f, 1f);
+				float cumulativeNormalizedProbability = 0;
+				foreach (LevelPopulatorSettings.EnvironmentObjectData data in Settings.Objects)
+				{
+					if (data.MinDistance <= z && data.MaxDistance >= z)
+					{
+						float normalizedProbability = data.VisibilityProbability.Evaluate(Mathf.Abs(x) / Settings.Width) / totalProbability;
+						cumulativeNormalizedProbability += normalizedProbability;
 
-				    if (randomNumber <= cumulativeNormalizedProbability)
-				    {
-					    if (!Physics.CheckSphere(position, data.CheckSurroundingsRadius, CollisionLayerMask.value, QueryTriggerInteraction.Collide))
-					    {
-						    if (data.Prefab != null)
-						    {
-							    Create(data, position);
-						    }
-					    }
-					    break;
-				    }
-			    }
-		    }
-	    }
-    }
+						if (randomNumber <= cumulativeNormalizedProbability)
+						{
+							if (!Physics.CheckSphere(position, data.CheckSurroundingsRadius, CollisionLayerMask.value, QueryTriggerInteraction.Collide))
+							{
+								if (data.Prefab != null)
+								{
+									Create(data, position);
+								}
+							}
+							break;
+						}
+					}
+				}
+			}
+		}
+	}
 
-    void Create(LevelPopulatorSettings.EnvironmentObjectData data, Vector3 position)
-    {
-	    GameObject instance = Instantiate(data.Prefab).gameObject;
-	    instance.transform.SetParent(Root);
-	    instance.transform.position = position;
-    }
+	void Create(LevelPopulatorSettings.EnvironmentObjectData data, Vector3 position)
+	{
+		GameObject instance = Instantiate(data.Prefab).gameObject;
+		instance.transform.SetParent(Root);
+		instance.transform.position = position;
+	}
 }
