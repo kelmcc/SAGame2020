@@ -17,5 +17,6 @@ public class LevelPopulatorSettings : ScriptableObject
    {
       public EnvironmentObject Prefab;
       public AnimationCurve VisibilityProbability;
+      public float CheckSurroundingsRadius = 1;
    }
 }

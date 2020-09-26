@@ -1,18 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class LevelPopulator : MonoBehaviour
 {
+	public int Seed = -1;
 	public LevelPopulatorSettings Settings;
 	public Transform Root;
 
+	public LayerMask CollisionLayerMask;
+
     void Start()
     {
+	    if (Seed != -1)
+	    {
+		    Random.InitState(Seed);
+	    }
 	    for(float z = 0; z < Settings.Distance; z += Settings.Step)
 	    {
 		    for (float x = -Settings.Width; x < Settings.Width; x+=Settings.Step)
 		    {
+			    Vector2 randomOffset = Random.insideUnitCircle * 0.75f;
+			    Vector3 position = new Vector3(x + Settings.Step / 2f + randomOffset.x, 0, z + Settings.NegativeStartingPoint + randomOffset.y);
+
 			    float totalProbability = 0;
 			    foreach (LevelPopulatorSettings.EnvironmentObjectData data in Settings.Objects)
 			    {
@@ -28,10 +40,12 @@ public class LevelPopulator : MonoBehaviour
 
 				    if (randomNumber <= cumulativeNormalizedProbability)
 				    {
-					    if (data.Prefab != null)
+					    if (!Physics.CheckSphere(position, data.CheckSurroundingsRadius, CollisionLayerMask.value, QueryTriggerInteraction.Collide))
 					    {
-						    Vector2 randomOffset = Random.insideUnitCircle * 0.75f;
-						    Create(data, new Vector3(x + Settings.Step/2f + randomOffset.x, 0,  z + Settings.NegativeStartingPoint + randomOffset.y));
+						    if (data.Prefab != null)
+						    {
+							    Create(data, position);
+						    }
 					    }
 					    break;
 				    }
