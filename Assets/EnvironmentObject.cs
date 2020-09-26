@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(VisibilityEvent))]
 public class EnvironmentObject : MonoBehaviour
 {
     private Transform _root;
@@ -16,29 +16,25 @@ public class EnvironmentObject : MonoBehaviour
     private Vector3 initialPosition;
     private Quaternion initialRotation;
 
-    private Collider _trigger;
+
+    private VisibilityEvent _visibilityEvent;
 
     public void Awake()
     {
         _root = transform.GetChild(0);
         _root.gameObject.SetActive(false);
-        _trigger = GetComponent<Collider>();
-    }
 
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "VisibilityVolume")
+        _visibilityEvent = GetComponent<VisibilityEvent>();
+
+        _visibilityEvent.OnVisible += () =>
         {
             StartCoroutine(TurnOn());
-        }
-    }
+        };
 
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "VisibilityVolume")
+        _visibilityEvent.OnInvisible += () =>
         {
             StartCoroutine(TurnOff());
-        }
+        };
     }
 
     public IEnumerator TurnOn()

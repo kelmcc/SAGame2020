@@ -6,8 +6,8 @@ using UnityEngine;
 public class ResourceSettings : ScriptableObject
 {
     public float MaxRaddishes = 50;
-    public float RaddishesSpawnedPerDayInEnvironment;
-    public float MaxRaddishesSpawnedInEnvironment;
+    public float RaddishesSpawnedPerDayInEnvironment = 6;
+    public float MaxRaddishesSpawnedInEnvironment = 20;
 
     //public float MaxRaddishesFoundPerDayPerFollower;
     //public float MaxRaddishesFoundPerDayPerFollower;
