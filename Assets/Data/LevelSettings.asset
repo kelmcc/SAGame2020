@@ -41,6 +41,53 @@ MonoBehaviour:
     MinDistance: 0
     MaxDistance: 155
     CheckSurroundingsRadius: 1
+  - Prefab: {fileID: 5428741591061205402, guid: 068b811f42c687441bb179f49bc416b1,
+      type: 3}
+    VisibilityProbability:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -0.06888008
+        value: -0.014634013
+        inSlope: 0.03331308
+        outSlope: 0.03331308
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.237638
+      - serializedVersion: 3
+        time: 0.15804616
+        value: 0.046695545
+        inSlope: 0.025158074
+        outSlope: 0.025158074
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.42929685
+        value: -0.0026037975
+        inSlope: 0.013768313
+        outSlope: 0.013768313
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9724426
+        value: -0.0027770996
+        inSlope: -0.015851388
+        outSlope: -0.015851388
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.31387806
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    MinDistance: 0
+    MaxDistance: 155
+    CheckSurroundingsRadius: 5
   - Prefab: {fileID: 3360377161252291209, guid: e063bf8c73b75a247a77e42c627e1898,
       type: 3}
     VisibilityProbability:
