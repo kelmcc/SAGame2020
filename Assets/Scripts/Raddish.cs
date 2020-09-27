@@ -23,6 +23,8 @@ public class Raddish : MonoBehaviour
 
     private JuiceAnimation _juiceAnimation;
 
+    public bool HasSeekTarget => _seekTarget != null;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -83,6 +85,8 @@ public class Raddish : MonoBehaviour
 
     public void SeekTarget(Transform transform)
     {
+        gameObject.transform.SetParent(null);
+        gameObject.transform.rotation = Quaternion.identity;
         _rigidbody.isKinematic = false;
         if(_seekTarget != null)_lastSeekTarget = _seekTarget;
         _seekTarget = transform;
@@ -150,7 +154,8 @@ public class Raddish : MonoBehaviour
 
         if (Vector3.Distance(_seekTarget.position, _rigidbody.position) < 2)
         {
-            _seekTarget.GetComponentInParent<RaddishCarrier>().StoreRaddish(this);
+            RaddishCarrier carrier = _seekTarget.GetComponentInParent<RaddishCarrier>();
+            carrier.StoreRaddish(this);
         }
 
     }

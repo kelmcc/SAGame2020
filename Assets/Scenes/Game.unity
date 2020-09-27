@@ -1028,8 +1028,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Buildings: []
-  RaddishSpawnInterval: 60
-  NumberOfRadishesSpawned: 4
+  RaddishSpawnInterval: 20
+  NumberOfRadishesSpawned: 1
 --- !u!4 &1173402932
 Transform:
   m_ObjectHideFlags: 0

@@ -19,6 +19,8 @@ public class RaddishPool : MonoBehaviour
         Raddish instance = RaddishesAvailable.Dequeue();
         instance.transform.position = position;
         instance.gameObject.SetActive(true);
+        instance.UnseekTarget();
+        instance.GetComponent<Rigidbody>().isKinematic = true;
         raddish = instance;
         return true;
     }
