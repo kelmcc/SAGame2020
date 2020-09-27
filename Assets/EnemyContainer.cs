@@ -10,13 +10,35 @@ public class EnemyContainer : MonoBehaviour
 
    public float MoveSpeed = 1;
 
+   public float Life = 1;
+
    public void TakeDamage()
    {
+      Life -= 0.1f;
 
+      if (Life <= 0)
+      {
+         Die();
+      }
+   }
+
+   private void Die()
+   {
+      EnemyManager.Instance.Die(this);
    }
 
    public void OnTriggerEnter(Collider collision)
    {
+      if (collision.gameObject.tag == "Arrow")
+      {
+         TakeDamage();
+      }
+
+      if (collision.gameObject.tag == "GameOver")
+      {
+         Debug.LogError("GameOver!");
+      }
+
       if (collision.gameObject.tag == "EnvironmentObject")
       {
          Building building = collision.gameObject.GetComponentInParent<Building>();

@@ -14,10 +14,10 @@ public class Projectile : MonoBehaviour
 		float dist = Vector3.Distance(endPosition, startPosition);
 		float totalTime = dist / MetersPerSecond;
 
-		CoroutineHelper.Instance.StartCoroutine(Shoot(startPosition, endPosition, totalTime));
+		CoroutineHelper.Instance.StartCoroutine(Shoot(startPosition, endPosition, totalTime, dist));
 	}
 
-	IEnumerator Shoot(Vector3 startPosition, Vector3 endPosition, float totalTime)
+	IEnumerator Shoot(Vector3 startPosition, Vector3 endPosition, float totalTime, float dist)
 	{
 		float time = 0;
 
@@ -26,7 +26,7 @@ public class Projectile : MonoBehaviour
 			yield return null;
 			float normalizedTime = time / totalTime;
 			Vector3 newLinearPosition = Vector3.Lerp(startPosition, endPosition, normalizedTime);
-			float verticalComponent = Mathf.Sin(normalizedTime * Mathf.PI);
+			float verticalComponent = Mathf.Sin(normalizedTime * Mathf.PI) * dist/3;
 			transform.position = newLinearPosition + Vector3.up * verticalComponent;
 			time += Time.deltaTime;
 		}

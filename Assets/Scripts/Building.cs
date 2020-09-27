@@ -21,6 +21,9 @@ public class Building : MonoBehaviour
     public float[] ShootDistances;
     public Transform[] ShootLocations;
 
+    private float LastShoot;
+    public List<float> ArrowTime = new List<float>(new[]{1, 0.5f, 0.1f});
+
     private RaddishShop _raddishShop;
 
     public int Level => _raddishShop.CurrentLevel;
@@ -138,6 +141,19 @@ public class Building : MonoBehaviour
 
     private void Update()
     {
+	    if (EnemyManager.EnemyContainerInstance != null && Level > 0 && Time.time - LastShoot > ArrowTime[Level])
+	    {
+		    Transform shootLocation = (ShootLocations[UnityEngine.Random.Range(0, ShootLocations.Length)]);
+		    if (Mathf.Abs(EnemyManager.EnemyContainerInstance.transform.position.z - shootLocation.position.z) < ShootDistances[Level])
+		    {
+			    Projectile projectile = ProjectilePool.Instance.GetProjectile();
+			    Vector3 pos = EnemyManager.EnemyContainerInstance.transform.position +
+			                  Vector3.right * UnityEngine.Random.Range(-5f, 5f);
+			    projectile.Shoot(shootLocation.position, pos);
+			    LastShoot = Time.time;
+		    }
+	    }
+
 	    if (RequiredBuilt == null)
 	    {
 		    return;
@@ -155,15 +171,7 @@ public class Building : MonoBehaviour
 		    _raddishShop.DisableShop = false;
 	    }
 
-	    if (EnemyManager.EnemyContainerInstance != null && Level > 0)
-	    {
-		    Transform shootLocation = (ShootLocations[UnityEngine.Random.Range(0, ShootLocations.Length)]);
-		  //  if (Mathf.Abs(EnemyManager.EnemyContainerInstance.transform.position.z - shootLocation.position.z) < ShootDistances[Level])
-		   // {
-			    Projectile projectile = ProjectilePool.Instance.GetProjectile();
-			    projectile.Shoot(transform.position, EnemyManager.EnemyContainerInstance.transform.position);
-		    //}
-	    }
+
 
     }
 }

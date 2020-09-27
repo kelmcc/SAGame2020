@@ -72,8 +72,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 100, z: 31.11}
-  m_Center: {x: 0, y: 0, z: 3.8}
+  m_Size: {x: 100, y: 100, z: 38.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3962705219998984785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,6 +640,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45288819fde2143449a96207b14db0bb, type: 3}
+--- !u!95 &918788035151389672 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2066896392029128874, guid: 45288819fde2143449a96207b14db0bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1184208695471188802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3747681712339117325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -715,8 +721,18 @@ PrefabInstance:
     - target: {fileID: 2039102552798394029, guid: 5c97706f37a550d49bd0d2653792e177,
         type: 3}
       propertyPath: WalkSpeed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2039102552798394029, guid: 5c97706f37a550d49bd0d2653792e177,
+        type: 3}
+      propertyPath: CharacterRoot
+      value: 
+      objectReference: {fileID: 2904303196260912365}
+    - target: {fileID: 2039102552798394029, guid: 5c97706f37a550d49bd0d2653792e177,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 918788035151389672}
     - target: {fileID: 2039102552798394031, guid: 5c97706f37a550d49bd0d2653792e177,
         type: 3}
       propertyPath: m_Name

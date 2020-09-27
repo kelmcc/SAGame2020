@@ -48,6 +48,7 @@ public class RaddishShop : MonoBehaviour
             RaddishPool.ReturnRaddish(raddish);
         }
         CurrentLevel = 0;
+        SetRaddishTargetsForNewLevel();
     }
 
     private void Awake()
