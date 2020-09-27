@@ -193,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyWaveContainerPrefab: {fileID: 3788067582435412169, guid: 275ed13f3aee05d4da1fd8f46348ef97,
     type: 3}
-  EnemyPrefab: {fileID: 193962065952408678, guid: 25b09ae0f4d00424389c977ee17111a2,
+  EnemyPrefab: {fileID: 193962065952408678, guid: 8599579d11c3f18449654e203786b190,
     type: 3}
   enemyLife: 1
   enemyLifeIncrement: 0.2

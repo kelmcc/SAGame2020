@@ -22,15 +22,11 @@ public class EnemySystem : SystemBase
         // Translation and Rotation components. Change it to process the component
         // types you want.
 
-        float targetZ = EnemyManager.EnemyContainerInstance.transform.position.z;
-        float time = UnityEngine.Time.time;
+
 
         Entities.ForEach((ref Translation translation, ref EnemyComponentRuntime enemy) =>
         {
-            enemy.LocalPosition.y = Mathf.Abs(Mathf.Sin((time + enemy.Offset)* math.PI));
-            enemy.LocalPosition.z = Mathf.Sin((time+ enemy.Offset) * math.PI);
 
-            translation.Value = new float3(translation.Value.x, enemy.LocalPosition.y, targetZ + enemy.LocalPosition.z);
 
         }).Schedule();
     }
