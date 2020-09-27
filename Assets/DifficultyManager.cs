@@ -51,7 +51,7 @@ public class DifficultyManager : MonoBehaviour
         //TODO: double check this is not reversed
         ellegibleSpawns.Sort((rhs, lhs) => rhs.transform.position.z.CompareTo(lhs.transform.position.z));
 
-        for (int i = NumberOfRadishesSpawned; i >= 0; i++)
+        for (int i = NumberOfRadishesSpawned; i >= 0; i--)
         {
             if (ellegibleSpawns.Count == 0)
             {
