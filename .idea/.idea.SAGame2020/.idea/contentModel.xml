@@ -19,6 +19,8 @@
           <e p="DayNightCycle.cs" t="Include" />
           <e p="DifficultyManager.cs" t="Include" />
           <e p="ECS" t="Include">
+            <e p="EnemyComponent.cs" t="Include" />
+            <e p="EnemyComponentRuntime.cs" t="Include" />
             <e p="EnemySystem.cs" t="Include" />
           </e>
           <e p="EnemyManager.cs" t="Include" />

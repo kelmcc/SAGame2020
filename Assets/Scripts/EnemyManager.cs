@@ -10,6 +10,8 @@ public class EnemyManager : MonoBehaviour
     public static EnemyContainer EnemyContainerInstance;
     public static EnemyManager Instance;
 
+    public GameObject EnemyPrefab;
+
     public float enemyLife = 1;
     public float enemyLifeIncrement = 0.2f;
 
@@ -21,6 +23,11 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         SpawnEnemies(1);
+
+        for (int i = 0; i < 200; i++)
+        {
+            Instantiate(EnemyPrefab);
+        }
     }
 
     public void Die(EnemyContainer container)
@@ -37,7 +44,6 @@ public class EnemyManager : MonoBehaviour
             SpawnEnemies(1);
         }
     }
-
 
     private void SpawnEnemies(int count)
     {
