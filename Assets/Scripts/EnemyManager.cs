@@ -6,7 +6,7 @@ public class EnemyManager : MonoBehaviour
 {
     public GameObject EnemyWaveContainerPrefab;
 
-    public EnemyContainer EnemyContainerInstance;
+    public static EnemyContainer EnemyContainerInstance;
 
     void Start()
     {

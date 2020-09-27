@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = System.Random;
 
 
 [RequireComponent(typeof(InteractorEvent), typeof(RaddishShop))]
@@ -17,6 +18,8 @@ public class Building : MonoBehaviour
 
     public GameObject UnderConstructionObject;
     public GameObject[] UpgradeOptions;
+    public float[] ShootDistances;
+    public Transform[] ShootLocations;
 
     private RaddishShop _raddishShop;
 
@@ -66,6 +69,7 @@ public class Building : MonoBehaviour
 	    }
 
 	    _raddishShop.DisableShop = false;
+	    _raddishShop.Reset();
     }
 
 
@@ -150,5 +154,16 @@ public class Building : MonoBehaviour
 	    {
 		    _raddishShop.DisableShop = false;
 	    }
+
+	    if (EnemyManager.EnemyContainerInstance != null && Level > 0)
+	    {
+		    Transform shootLocation = (ShootLocations[UnityEngine.Random.Range(0, ShootLocations.Length)]);
+		  //  if (Mathf.Abs(EnemyManager.EnemyContainerInstance.transform.position.z - shootLocation.position.z) < ShootDistances[Level])
+		   // {
+			    Projectile projectile = ProjectilePool.Instance.GetProjectile();
+			    projectile.Shoot(transform.position, EnemyManager.EnemyContainerInstance.transform.position);
+		    //}
+	    }
+
     }
 }

@@ -39,6 +39,17 @@ public class RaddishShop : MonoBehaviour
             SetRaddishTargetsForNewLevel();
         }
     }
+
+    public void Reset()
+    {
+        foreach (Raddish raddish in RaddishesUsed)
+        {
+            raddish.UnseekTarget();
+            RaddishPool.ReturnRaddish(raddish);
+        }
+        CurrentLevel = 0;
+    }
+
     private void Awake()
     {
         intearactorEvent = GetComponent<InteractorEvent>();

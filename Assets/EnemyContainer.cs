@@ -17,22 +17,30 @@ public class EnemyContainer : MonoBehaviour
 
    public void OnTriggerEnter(Collider collision)
    {
-      if (collision.gameObject.tag == "Building")
+      if (collision.gameObject.tag == "EnvironmentObject")
       {
          Building building = collision.gameObject.GetComponentInParent<Building>();
-         if (building.Level > 0)
+         if (building != null)
          {
+            if (building.Level > 0)
+            {
                target = building;
                targetCount++;
+            }
          }
+
       }
    }
 
-   public void OnCollisionExit(Collider collision)
+   public void OnTriggerExit(Collider collision)
    {
-      if (collision.gameObject.tag == "Building")
+      if (collision.gameObject.tag == "EnvironmentObject")
       {
-         targetCount = Mathf.Max(0, targetCount - 1);
+         Building building = collision.gameObject.GetComponentInParent<Building>();
+         if (building != null)
+         {
+            targetCount = Mathf.Max(0, targetCount - 1);
+         }
       }
 
       if (targetCount <= 0)

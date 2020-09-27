@@ -70,7 +70,7 @@ public class Raddish : MonoBehaviour
 
             if (!_juiceAnimation.IsWobbling)
             {
-                _juiceAnimation.Wobble(0.04f, 50, 1);
+                _juiceAnimation.Wobble(0.04f, 50, 3);
             }
 
             interactionTime += Time.fixedDeltaTime;
