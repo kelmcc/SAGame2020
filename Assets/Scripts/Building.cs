@@ -22,6 +22,53 @@ public class Building : MonoBehaviour
 
     public int Level => _raddishShop.CurrentLevel;
 
+    private float DamageTimeBeforeBroken = 10;
+    private float TimeDamaged = 0;
+
+    public void TakeDamage()
+    {
+	    TimeDamaged =  Mathf.Min(DamageTimeBeforeBroken, TimeDamaged + Time.deltaTime);
+	    if (TimeDamaged >= DamageTimeBeforeBroken)
+	    {
+		    Destroy();
+	    }
+    }
+
+    public void Destroy()
+    {
+	    UpgradeOptions[0].SetActive(true);
+
+	    foreach (JuiceAnimation anim in UpgradeOptions[0].GetComponentsInChildren<JuiceAnimation>())
+	    {
+		    anim.LerpScale(0, 1, 0.5f, () => { });
+	    }
+
+	    if (UpgradeOptions[1].activeSelf)
+	    {
+		    foreach (JuiceAnimation anim in UpgradeOptions[0].GetComponentsInChildren<JuiceAnimation>())
+		    {
+			    anim.LerpScale(1, 0, 0.5f, () =>
+			    {
+				    UpgradeOptions[1].SetActive(false);
+			    });
+		    }
+	    }
+
+	    if (UpgradeOptions[2].activeSelf)
+	    {
+		    foreach (JuiceAnimation anim in UpgradeOptions[2].GetComponentsInChildren<JuiceAnimation>())
+		    {
+			    anim.LerpScale(1, 0, 0.5f, () =>
+			    {
+				    UpgradeOptions[2].SetActive(false);
+			    });
+		    }
+	    }
+
+	    _raddishShop.DisableShop = false;
+    }
+
+
     private void Awake()
     {
 	    _raddishShop = GetComponent<RaddishShop>();

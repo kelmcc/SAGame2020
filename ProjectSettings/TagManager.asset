@@ -8,6 +8,7 @@ TagManager:
   - EnvironmentObject
   - InteractionVolume
   - Raddish
+  - Building
   layers:
   - Default
   - TransparentFX

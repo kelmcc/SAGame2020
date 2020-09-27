@@ -5,31 +5,36 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Building.cs" t="Include" />
-        <e p="BuildingGroup.cs" t="Include" />
-        <e p="DayNightCycle.cs" t="Include" />
-        <e p="DifficultyManager.cs" t="Include" />
-        <e p="EnvironmentObject.cs" t="Include" />
-        <e p="GameUI.cs" t="Include" />
-        <e p="JuiceAnimation.cs" t="Include" />
-        <e p="PlayerBehaviour.cs" t="Include" />
-        <e p="RaddishPool.cs" t="Include" />
-        <e p="RaddishSpawnPoint.cs" t="Include" />
+        <e p="EnemyContainer.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Actor.cs" t="Include" />
           <e p="AIBrain.cs" t="Include" />
           <e p="Brain.cs" t="Include" />
+          <e p="Building.cs" t="Include" />
+          <e p="BuildingGroup.cs" t="Include" />
           <e p="CoroutineHelper.cs" t="Include" />
+          <e p="DayNightCycle.cs" t="Include" />
+          <e p="DifficultyManager.cs" t="Include" />
+          <e p="ECS" t="Include">
+            <e p="EnemySystem.cs" t="Include" />
+          </e>
+          <e p="EnemyManager.cs" t="Include" />
+          <e p="EnvironmentObject.cs" t="Include" />
           <e p="Events" t="Include">
             <e p="InteractorEvent.cs" t="Include" />
             <e p="VisibilityEvent.cs" t="Include" />
           </e>
+          <e p="GameUI.cs" t="Include" />
           <e p="Interactor.cs" t="Include" />
+          <e p="JuiceAnimation.cs" t="Include" />
           <e p="LevelPopulator.cs" t="Include" />
+          <e p="PlayerBehaviour.cs" t="Include" />
           <e p="PlayerBrain.cs" t="Include" />
           <e p="Raddish.cs" t="Include" />
           <e p="RaddishCarrier.cs" t="Include" />
+          <e p="RaddishPool.cs" t="Include" />
           <e p="RaddishShop.cs" t="Include" />
+          <e p="RaddishSpawnPoint.cs" t="Include" />
           <e p="Settings" t="Include">
             <e p="LevelPopulatorSettings.cs" t="Include" />
             <e p="ResourceSettings.cs" t="Include" />

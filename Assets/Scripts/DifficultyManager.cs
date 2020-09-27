@@ -12,6 +12,16 @@ public class DifficultyManager : MonoBehaviour
     public float RaddishSpawnInterval = 60;
     public int NumberOfRadishesSpawned = 4;
 
+    public Transform[] EnemySpawnPoints;
+
+    public static DifficultyManager Instance;
+
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Update()
     {
         if (Time.time - RaddishSpawnInterval > _lastSpawn)
@@ -22,10 +32,9 @@ public class DifficultyManager : MonoBehaviour
         }
     }
 
-    private void SpawnNewRaddishes()
+    public float GetFurthestBuildingZ()
     {
         float furthestZ = float.NegativeInfinity;
-        Building furthestBuilding = null;
         foreach (Building building in Buildings)
         {
             if (building.Level > 0)
@@ -33,11 +42,15 @@ public class DifficultyManager : MonoBehaviour
                 if (building.transform.position.z > furthestZ)
                 {
                     furthestZ = building.transform.position.z;
-                    furthestBuilding = building;
                 }
             }
         }
+        return furthestZ;
+    }
 
+    private void SpawnNewRaddishes()
+    {
+        float furthestZ = GetFurthestBuildingZ();
         List<RaddishSpawnPoint> ellegibleSpawns = new List<RaddishSpawnPoint>();
         foreach (var spawnPoint in RaddishSpawnPoint.SpawnPoints)
         {
@@ -49,7 +62,7 @@ public class DifficultyManager : MonoBehaviour
 
         //Sort so we spawn from closest to furthest!
         //TODO: double check this is not reversed
-        ellegibleSpawns.Sort((rhs, lhs) => rhs.transform.position.z.CompareTo(lhs.transform.position.z));
+      //  ellegibleSpawns.Sort((rhs, lhs) => rhs.transform.position.z.CompareTo(lhs.transform.position.z));
 
         for (int i = NumberOfRadishesSpawned; i >= 0; i--)
         {
@@ -63,5 +76,30 @@ public class DifficultyManager : MonoBehaviour
             ellegibleSpawns.RemoveAt(spawnIndex);
         }
 
+    }
+
+
+    public Transform GetSpawnTransform()
+    {
+        float furthestZ = GetFurthestBuildingZ();
+        List<Transform> validTransforms = new List<Transform>();
+        foreach (var transform in EnemySpawnPoints)
+        {
+            if (transform.position.z > furthestZ)
+            {
+                validTransforms.Add(transform);
+            }
+        }
+
+        Transform smallest = validTransforms[0];
+        foreach (var transform in EnemySpawnPoints)
+        {
+            if (smallest.position.z < transform.position.z)
+            {
+                smallest = transform;
+            }
+        }
+
+        return smallest;
     }
 }
