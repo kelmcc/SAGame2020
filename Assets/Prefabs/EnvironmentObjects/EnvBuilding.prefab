@@ -90,7 +90,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573242944562394085}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: -1.62, z: 0}
+  m_LocalPosition: {x: -1.48, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5125116146971281746}
@@ -471,7 +471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2474310644743128078}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: -1.6199999, z: 0}
+  m_LocalPosition: {x: 1.56, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7665149920097856818}
@@ -491,6 +491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelRequirements: 0200000004000000
+  CurrentLevel: 0
   TimeToAddRaddish: 0.5
   RaddishTargets:
   - {fileID: 467328115377398268}
@@ -509,6 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed810e8184072794aa4386bc2539c7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RequiredBuilt: {fileID: 0}
   BuildTime: 10
   UnderConstructionObject: {fileID: 6444814659816063689}
   UpgradeOptions:
@@ -1127,7 +1129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5398271112037108980}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 0.55, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4121972464432399261}
@@ -1158,7 +1160,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5553832073045238744}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalPosition: {x: -0.55, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6003769487945645165}
@@ -1209,6 +1211,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: RaddishUITarget
       objectReference: {fileID: 0}
+    - target: {fileID: 7321918409504297509, guid: d22ef3c1f4b60314180c8759953d687e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1f8f00c720928d34290c1b52114267b5,
+        type: 3}
     - target: {fileID: 9204863485821977796, guid: d22ef3c1f4b60314180c8759953d687e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1222,7 +1230,7 @@ PrefabInstance:
     - target: {fileID: 9204863485821977796, guid: d22ef3c1f4b60314180c8759953d687e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.77
+      value: 0.106000006
       objectReference: {fileID: 0}
     - target: {fileID: 9204863485821977796, guid: d22ef3c1f4b60314180c8759953d687e,
         type: 3}
@@ -1425,6 +1433,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: RaddishTarget
       objectReference: {fileID: 0}
+    - target: {fileID: 7321918409504297509, guid: d22ef3c1f4b60314180c8759953d687e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1f8f00c720928d34290c1b52114267b5,
+        type: 3}
     - target: {fileID: 9204863485821977796, guid: d22ef3c1f4b60314180c8759953d687e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1438,7 +1452,7 @@ PrefabInstance:
     - target: {fileID: 9204863485821977796, guid: d22ef3c1f4b60314180c8759953d687e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.77
+      value: 0.106
       objectReference: {fileID: 0}
     - target: {fileID: 9204863485821977796, guid: d22ef3c1f4b60314180c8759953d687e,
         type: 3}
@@ -1483,7 +1497,7 @@ PrefabInstance:
     - target: {fileID: 9204863485821977796, guid: d22ef3c1f4b60314180c8759953d687e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 9204863485821977796, guid: d22ef3c1f4b60314180c8759953d687e,
         type: 3}
@@ -1550,6 +1564,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: RaddishUITarget
       objectReference: {fileID: 0}
+    - target: {fileID: 7321918409504297509, guid: d22ef3c1f4b60314180c8759953d687e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1f8f00c720928d34290c1b52114267b5,
+        type: 3}
     - target: {fileID: 9204863485821977796, guid: d22ef3c1f4b60314180c8759953d687e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1563,7 +1583,7 @@ PrefabInstance:
     - target: {fileID: 9204863485821977796, guid: d22ef3c1f4b60314180c8759953d687e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.77
+      value: 0.106000006
       objectReference: {fileID: 0}
     - target: {fileID: 9204863485821977796, guid: d22ef3c1f4b60314180c8759953d687e,
         type: 3}
@@ -1675,6 +1695,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: RaddishUITarget
       objectReference: {fileID: 0}
+    - target: {fileID: 7321918409504297509, guid: d22ef3c1f4b60314180c8759953d687e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1f8f00c720928d34290c1b52114267b5,
+        type: 3}
     - target: {fileID: 9204863485821977796, guid: d22ef3c1f4b60314180c8759953d687e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1688,7 +1714,7 @@ PrefabInstance:
     - target: {fileID: 9204863485821977796, guid: d22ef3c1f4b60314180c8759953d687e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.77
+      value: 0.106000006
       objectReference: {fileID: 0}
     - target: {fileID: 9204863485821977796, guid: d22ef3c1f4b60314180c8759953d687e,
         type: 3}

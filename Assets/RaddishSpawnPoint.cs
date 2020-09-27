@@ -25,6 +25,7 @@ public class RaddishSpawnPoint : MonoBehaviour
         {
             _radish = instance;
             _radish.transform.SetParent(transform);
+            _radish.transform.localRotation = Quaternion.identity;
         }
 
         return success;
