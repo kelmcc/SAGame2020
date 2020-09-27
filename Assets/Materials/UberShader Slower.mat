@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_UberShader
+  m_Name: UberShader Slower
   m_Shader: {fileID: -6465566751694194690, guid: debb9ea653b598e49a3256874c772792,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
@@ -29,8 +29,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_6FD44F6C: 6
-    - Vector1_A6535994: 124
+    - Vector1_6FD44F6C: 9
+    - Vector1_A6535994: 1500
     - Vector1_AC2F7301: 3
     - Vector1_C9E060A4: 124
     - Vector1_F44137A8: 0.15
