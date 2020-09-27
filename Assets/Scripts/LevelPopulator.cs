@@ -62,8 +62,15 @@ public class LevelPopulator : MonoBehaviour
 
 	void Create(LevelPopulatorSettings.EnvironmentObjectData data, Vector3 position)
 	{
+		int randomFlip = Random.Range(0, 2);
+
 		GameObject instance = Instantiate(data.Prefab).gameObject;
 		instance.transform.SetParent(Root);
 		instance.transform.position = position;
+
+		if (randomFlip == 0)
+		{
+			instance.transform.localScale = new Vector3(-1,1,1);
+		}
 	}
 }
