@@ -8,39 +8,100 @@ using UnityEngine.Serialization;
 [RequireComponent(typeof(InteractorEvent), typeof(RaddishShop))]
 public class Building : MonoBehaviour
 {
-    public float TimeBeforeAddingRaddish;
+	public Building RequiredBuilt;
 
-    private InteractorEvent intearactorEvent;
+	private InteractorEvent intearactorEvent;
     private Interactor _currentInteractor;
     private float interactionTime;
-
     public float BuildTime;
-    public float TimeRemaining;
-    public int CurrentUpgradeLevel;
-    public int TargetUpgradeLevel;
 
     public GameObject UnderConstructionObject;
     public GameObject[] UpgradeOptions;
 
     private RaddishShop _raddishShop;
 
+    public int Level => _raddishShop.CurrentLevel;
+
     private void Awake()
     {
-	    _raddishShop = new RaddishShop();
+	    _raddishShop = GetComponent<RaddishShop>();
     }
 
     private void Start()
     {
-	    _raddishShop.OnLevelUp += (List<Raddish> raddishes) =>
+	    UnderConstructionObject.SetActive(false);
+	    for (int i = 0; i < UpgradeOptions.Length; i++)
 	    {
-		    CoroutineHelper.Instance.StartCoroutine(StartLevelUp());
+		    UpgradeOptions[i].SetActive(false);
+	    }
+	    UpgradeOptions[0].SetActive(true);
+
+	    _raddishShop.OnLevelUp += (int currentLevel) =>
+	    {
+		    _raddishShop.DisableShop = true;
+		    _levelingUp = true;
+		    CoroutineHelper.Instance.StartCoroutine(StartLevelUp(currentLevel));
 	    };
     }
 
-    IEnumerator StartLevelUp()
+    private bool _levelingUp;
+    IEnumerator StartLevelUp(int level)
     {
-	    _raddishShop.DisableShop = true;
-	    yield return new WaitForSeconds(10);
+	    JuiceAnimation[] underConstructionAnims = UnderConstructionObject.GetComponentsInChildren<JuiceAnimation>();
+	    JuiceAnimation[] toRemoveAnims = UpgradeOptions[level-1].GetComponentsInChildren<JuiceAnimation>();
+	    JuiceAnimation[] toBuildAnims = UpgradeOptions[level].GetComponentsInChildren<JuiceAnimation>();
+
+	    UnderConstructionObject.SetActive(true);
+	    foreach (JuiceAnimation anim in underConstructionAnims)
+	    {
+		    anim.LerpScale(0, 1, 0.5f, () => { });
+	    }
+
+	    foreach (JuiceAnimation anim in toRemoveAnims)
+	    {
+		    anim.LerpScale(1, 0, 0.5f, () => { });
+	    }
+
+	    yield return new WaitForSeconds(0.6f);
+	    UpgradeOptions[level-1].SetActive(false);
+
+	    yield return new WaitForSeconds(BuildTime - 0.6f - 0.6f);
+
+	    UpgradeOptions[level].SetActive(true);
+	    foreach (JuiceAnimation anim in toBuildAnims)
+	    {
+		    anim.LerpScale(0, 1, 0.5f, () => { });
+	    }
+
+	    yield return new WaitForSeconds(0.6f);
+
+	    foreach (JuiceAnimation anim in underConstructionAnims)
+	    {
+		    anim.LerpScale(1, 0, 0.5f, () => { });
+	    }
+	    UnderConstructionObject.SetActive(false);
+
 	    _raddishShop.DisableShop = false;
+	    _levelingUp = false;
+    }
+
+    private void Update()
+    {
+	    if (RequiredBuilt == null)
+	    {
+		    return;
+	    }
+	    //Handle not building if previous building has not built!
+	    if (RequiredBuilt.Level == 0)
+	    {
+		    if (!_raddishShop.DisableShop)
+		    {
+			    _raddishShop.DisableShop = true;
+		    }
+	    }
+	    else if(!_levelingUp && _raddishShop.DisableShop)
+	    {
+		    _raddishShop.DisableShop = false;
+	    }
     }
 }

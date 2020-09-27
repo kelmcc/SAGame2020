@@ -112,7 +112,7 @@ public class JuiceAnimation : MonoBehaviour
         then?.Invoke();
     }
 
-    float Overshoot(float t)
+    public static float Overshoot(float t)
     {
         float amp = 80;
         float freq = 1;

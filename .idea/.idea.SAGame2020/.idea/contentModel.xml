@@ -6,11 +6,15 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Building.cs" t="Include" />
+        <e p="BuildingGroup.cs" t="Include" />
         <e p="DayNightCycle.cs" t="Include" />
+        <e p="DifficultyManager.cs" t="Include" />
         <e p="EnvironmentObject.cs" t="Include" />
         <e p="GameUI.cs" t="Include" />
         <e p="JuiceAnimation.cs" t="Include" />
         <e p="PlayerBehaviour.cs" t="Include" />
+        <e p="RaddishPool.cs" t="Include" />
+        <e p="RaddishSpawnPoint.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Actor.cs" t="Include" />
           <e p="AIBrain.cs" t="Include" />

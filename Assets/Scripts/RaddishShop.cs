@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(RaddishCarrier))]
+[DefaultExecutionOrder(-100)]
 public class RaddishShop : MonoBehaviour
 {
     public List<int> LevelRequirements = new List<int>(new[]{ 2, 3, 4});
-    private int CurrentLevel = 0;
+    public int CurrentLevel = 0;
 
     public float TimeToAddRaddish = 0.5f;
 
@@ -21,10 +22,23 @@ public class RaddishShop : MonoBehaviour
 
     public Transform[] RaddishTargets;
 
-    public event Action<List<Raddish>> OnLevelUp = delegate{};
+    public event Action<int> OnLevelUp = delegate{};
 
     public bool MaxLevel { get; private set; }
-    public bool DisableShop { get; set; }
+
+    private bool _disableShop;
+    public bool DisableShop
+    {
+        get
+        {
+            return _disableShop;
+        }
+        set
+        {
+            _disableShop = value;
+            SetRaddishTargetsForNewLevel();
+        }
+    }
     private void Awake()
     {
         intearactorEvent = GetComponent<InteractorEvent>();
@@ -77,7 +91,6 @@ public class RaddishShop : MonoBehaviour
 
                 if (EnoughRadishesToLevel())
                 {
-                    OnLevelUp(RaddishesWaitingAtTarget);
                     foreach (Raddish r in RaddishesWaitingAtTarget)
                     {
                         r.AnimateOutAndHide();
@@ -88,12 +101,14 @@ public class RaddishShop : MonoBehaviour
                     if (CurrentLevel < LevelRequirements.Count-1)
                     {
                         CurrentLevel += 1;
-                        SetRaddishTargetsForNewLevel();
+                        OnLevelUp?.Invoke(CurrentLevel);
                     }
                     else
                     {
                         MaxLevel = true;
                     }
+
+                    SetRaddishTargetsForNewLevel();
                 }
             }
         }
@@ -104,7 +119,7 @@ public class RaddishShop : MonoBehaviour
         for(int i = 0; i < RaddishTargets.Length; i++)
         {
             JuiceAnimation anim = RaddishTargets[i].GetComponentInChildren<JuiceAnimation>();
-            if (LevelRequirements[CurrentLevel] > i)
+            if (LevelRequirements[CurrentLevel] > i && !MaxLevel && !DisableShop)
             {
                 anim.PopScale(anim.transform.localScale.x, 1, 0.5f);
             }
