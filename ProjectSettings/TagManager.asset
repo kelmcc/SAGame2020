@@ -6,6 +6,8 @@ TagManager:
   tags:
   - VisibilityVolume
   - EnvironmentObject
+  - InteractionVolume
+  - Raddish
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - 
   - EnvironmentObject
   - EnvironmentObjectCollide
-  - 
-  - 
+  - Player
+  - DontCollideWithPlayer
   - 
   - 
   - 

@@ -12,15 +12,44 @@ public class Actor : MonoBehaviour
 
     private float movement;
 
+    private Rigidbody _rigidbody;
+
+    private Interactor _interactor;
+
+    private void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+        _interactor = GetComponentInChildren<Interactor>();
+
+    }
+
     void Start()
     {
         _brain = GetComponent<Brain>();
         Debug.Assert(_brain != null);
     }
 
+    private void Update()
+    {
+        if (_brain.GetAction())
+        {
+            if (_interactor)
+            {
+                _interactor.InteractActive = true;
+            }
+        }
+        else
+        {
+            if (_interactor)
+            {
+                _interactor.InteractActive = false;
+            }
+        }
+    }
+
     private void FixedUpdate()
     {
         float movement = _brain.GetMovement();
-        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Time.fixedDeltaTime * WalkSpeed * movement);
+        _rigidbody.MovePosition(new Vector3(transform.position.x, transform.position.y, transform.position.z + Time.fixedDeltaTime * WalkSpeed * movement));
     }
 }
