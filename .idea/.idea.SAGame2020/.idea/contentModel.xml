@@ -6,6 +6,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="EnemyContainer.cs" t="Include" />
+        <e p="HomeScreenManager.cs" t="Include" />
         <e p="ParticleTrigger.cs" t="Include" />
         <e p="Projectile.cs" t="Include" />
         <e p="ProjectilePool.cs" t="Include" />
