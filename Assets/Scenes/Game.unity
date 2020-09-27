@@ -362,36 +362,12 @@ MonoBehaviour:
   timeMultiplier: 1
   CurrentTime: 0
   DayCount: 0
---- !u!1 &525193268
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 525193269}
-  m_Layer: 0
-  m_Name: CameraTarget
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &525193269
+--- !u!4 &525193269 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 525193269, guid: 77d3dccde913a084e9a108b4905f11c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2904303196874601011}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525193268}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.63, z: 2.98}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 581788050}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &581788050 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2904303196359922593, guid: 77d3dccde913a084e9a108b4905f11c1,
@@ -1661,21 +1637,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 918788035155467564, guid: 77d3dccde913a084e9a108b4905f11c1,
-        type: 3}
-      propertyPath: m_CastShadows
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2790738336873801162, guid: 77d3dccde913a084e9a108b4905f11c1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2904303196359922592, guid: 77d3dccde913a084e9a108b4905f11c1,
-        type: 3}
-      propertyPath: WalkSpeed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 2904303196359922593, guid: 77d3dccde913a084e9a108b4905f11c1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1735,16 +1696,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4143041267727994197, guid: 77d3dccde913a084e9a108b4905f11c1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4338298042464209788, guid: 77d3dccde913a084e9a108b4905f11c1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77d3dccde913a084e9a108b4905f11c1, type: 3}
